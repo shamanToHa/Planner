@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Planner</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Planner beta</string>
+    <string name="nav_header_subtitle">buchin.anton@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tab_item_earnings">earnings</string>
+    <string name="tab_item_expenses">expenses</string>
+    <string name="tab_item_todo">todo</string>
+    <string name="earning">earning</string>
+    <string name="expenses">expenses</string>
+    <string name="action_clear">Clear All</string>
+</resources>
