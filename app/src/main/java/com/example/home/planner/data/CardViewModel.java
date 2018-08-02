@@ -29,8 +29,8 @@ public class CardViewModel extends AndroidViewModel {
         executorService.execute(() -> cardDao.saveEarningCard(card));
     }
 
-    public void deleteCard(EarningCard card) {
-        executorService.execute(() -> cardDao.delete(card));
+    public void deleteCard(long id) {
+        executorService.execute(() -> cardDao.delete(id));
     }
 
     public void deleteAllCards() {

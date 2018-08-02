@@ -42,13 +42,13 @@ public class EarningsFragment extends AbstractTabFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_earnings, container, false);
 
-        adapter = new EarningsCardAdapter(new ArrayList<>());
+        cardViewModel = ViewModelProviders.of(this).get(CardViewModel.class);
+        adapter = new EarningsCardAdapter(new ArrayList<>(), context, cardViewModel);
 
         RecyclerView rv = view.findViewById(R.id.earnings_recycler_view);
         rv.setLayoutManager(new LinearLayoutManager(getActivity()));
         rv.setAdapter(adapter);
 
-        cardViewModel = ViewModelProviders.of(this).get(CardViewModel.class);
         cardViewModel.getAllEarningCards().observe(EarningsFragment.this, adapter::setData);
 
         return view;
@@ -58,7 +58,6 @@ public class EarningsFragment extends AbstractTabFragment {
     public void setContext(Context context) {
         this.context = context;
     }
-
 
 
 }

@@ -35,7 +35,6 @@ public class CreateCardActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_card);
-
         ButterKnife.bind(this);
         viewModel = ViewModelProviders.of(this).get(CardViewModel.class);
     }
@@ -44,9 +43,7 @@ public class CreateCardActivity extends AppCompatActivity {
     void createEarningCard() {
         if (checkEarning.isChecked()) {
             EarningCard card = new EarningCard();
-
             card.setTitle(title.getText().toString());
-
             if (amount.getText().length() != 0) {
                 card.setAmount(Double.parseDouble(amount.getText().toString()));
             }
