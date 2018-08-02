@@ -9,7 +9,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.example.home.planner.ui.fragment.AbstractTabFragment;
 import com.example.home.planner.ui.fragment.EarningsFragment;
 import com.example.home.planner.ui.fragment.ExpensesFragment;
-import com.example.home.planner.ui.fragment.TodoFragment;
+import com.example.home.planner.ui.fragment.NotesFragment;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class TabsFragmentAdapter extends FragmentPagerAdapter {
         tabs = new ArrayList<>();
         tabs.add(EarningsFragment.newInstance(context));
         tabs.add(ExpensesFragment.newInstance(context));
-        tabs.add(TodoFragment.newInstance(context));
+        tabs.add(NotesFragment.newInstance(context));
     }
 
     @Nullable

@@ -8,15 +8,15 @@ import android.view.ViewGroup;
 
 import com.example.home.planner.R;
 
-public class TodoFragment extends AbstractTabFragment {
+public class NotesFragment extends AbstractTabFragment {
 
 
-    public static TodoFragment newInstance(Context context) {
-        TodoFragment fragment = new TodoFragment();
+    public static NotesFragment newInstance(Context context) {
+        NotesFragment fragment = new NotesFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
         fragment.setContext(context);
-        fragment.setTitle(context.getString(R.string.tab_item_todo));
+        fragment.setTitle(context.getString(R.string.tab_item_note));
         return fragment;
     }
 

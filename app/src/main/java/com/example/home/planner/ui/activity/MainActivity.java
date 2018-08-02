@@ -1,6 +1,8 @@
 package com.example.home.planner.ui.activity;
 
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -13,12 +15,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.home.planner.R;
 import com.example.home.planner.adapter.TabsFragmentAdapter;
 import com.example.home.planner.data.CardViewModel;
-import com.example.home.planner.model.EarningCard;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,6 +39,11 @@ public class MainActivity extends AppCompatActivity
     DrawerLayout drawer;
 
     private CardViewModel viewModel;
+
+    public static void start(Context context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
 
     @Override
@@ -117,14 +122,6 @@ public class MainActivity extends AppCompatActivity
 
     private void initFloatingActionButton() {
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EarningCard card = new EarningCard();
-                card.setTitle("title");
-                card.setAmount(1000.01);
-                viewModel.saveCard(card);
-            }
-        });
+        fab.setOnClickListener(v -> CreateCardActivity.start(this));
     }
 }
