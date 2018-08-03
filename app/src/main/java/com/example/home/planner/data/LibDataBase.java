@@ -1,19 +1,14 @@
 package com.example.home.planner.data;
 
-import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
-import android.support.annotation.NonNull;
 
 import com.example.home.planner.model.EarningCard;
+import com.example.home.planner.model.Note;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.Executors;
-
-@Database(entities = {EarningCard.class}, version = 1,exportSchema = false)
+@Database(entities = {EarningCard.class, Note.class}, version = 1,exportSchema = false)
 public abstract class LibDataBase extends RoomDatabase {
 
     private static LibDataBase INSTANCE;

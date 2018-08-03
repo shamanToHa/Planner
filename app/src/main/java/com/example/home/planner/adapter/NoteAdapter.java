@@ -12,39 +12,39 @@ import android.widget.TextView;
 
 import com.example.home.planner.R;
 import com.example.home.planner.data.CardViewModel;
-import com.example.home.planner.model.EarningCard;
+import com.example.home.planner.model.Note;
 
 import java.util.List;
 
-public class EarningsCardAdapter extends RecyclerView.Adapter<EarningsCardAdapter.EarningViewHolder> {
+public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
 
-    private List<EarningCard> data;
+    private List<Note> data;
     private Context context;
     private CardViewModel model;
 
-    public EarningsCardAdapter(List<EarningCard> data, Context context, CardViewModel model) {
+    public NoteAdapter(List<Note> data, Context context, CardViewModel model) {
         this.data = data;
         this.context = context;
         this.model = model;
     }
 
-    public void setData(List<EarningCard> data) {
+    public void setData(List<Note> data) {
         this.data = data;
         notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public EarningViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.earning_item, parent, false);
-        return new EarningViewHolder(view);
+                .inflate(R.layout.note_item, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull EarningViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(data.get(position).getTitle());
-        holder.amount.setText(String.valueOf(data.get(position).getAmount()));
+        holder.message.setText(data.get(position).getMessage());
     }
 
     @Override
@@ -52,28 +52,27 @@ public class EarningsCardAdapter extends RecyclerView.Adapter<EarningsCardAdapte
         return data.size();
     }
 
-    class EarningViewHolder extends RecyclerView.ViewHolder {
-       private CardView cardView;
-       private TextView title;
-       private TextView amount;
+    class ViewHolder extends RecyclerView.ViewHolder {
+        CardView cardView;
+        TextView title;
+        TextView message;
 
-        EarningViewHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            cardView = itemView.findViewById(R.id.item_earning_card);
-            title = itemView.findViewById(R.id.item_earning_title);
-            amount = itemView.findViewById(R.id.item_earning_amount);
+            cardView = itemView.findViewById(R.id.item_note_card);
+            title = itemView.findViewById(R.id.item_note_title);
+            message = itemView.findViewById(R.id.item_note_text);
             itemView.setOnLongClickListener(v -> {
                 PopupMenu menu = new PopupMenu(context, v);
                 menu.inflate(R.menu.menu_card);
                 menu.setOnMenuItemClickListener(item -> {
                     long tmp = data.get(getAdapterPosition()).getId();
-                    model.deleteCard(tmp);
+                    model.deleteNote(tmp);
                     return false;
                 });
                 menu.show();
                 return false;
             });
-
         }
     }
 }

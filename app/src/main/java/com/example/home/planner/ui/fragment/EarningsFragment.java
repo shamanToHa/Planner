@@ -12,8 +12,6 @@ import android.view.ViewGroup;
 import com.example.home.planner.R;
 import com.example.home.planner.adapter.EarningsCardAdapter;
 import com.example.home.planner.data.CardViewModel;
-import com.example.home.planner.model.EarningCard;
-import com.example.home.planner.data.LibDataBase;
 
 import java.util.ArrayList;
 
@@ -21,8 +19,7 @@ import java.util.ArrayList;
 public class EarningsFragment extends AbstractTabFragment {
 
     private CardViewModel cardViewModel;
-    EarningsCardAdapter adapter;
-    LibDataBase db;
+    private EarningsCardAdapter adapter;
 
     public static EarningsFragment newInstance(Context context) {
         EarningsFragment fragment = new EarningsFragment();

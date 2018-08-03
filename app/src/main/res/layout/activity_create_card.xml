@@ -33,8 +33,23 @@
             android:inputType="numberDecimal"
             android:maxLines="1" />
     </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/create_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="@string/message"
+            android:visibility="gone"
+            android:inputType="textPersonName"
+            android:maxLines="1" />
+    </android.support.design.widget.TextInputLayout>
 
     <RadioGroup
+        android:id="@+id/check_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -53,6 +68,7 @@
             android:text="@string/expenses" />
 
         <RadioButton
+            android:id="@+id/check_note"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/note" />

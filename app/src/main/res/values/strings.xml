@@ -18,4 +18,5 @@
     <string name="title">title</string>
     <string name="amount">amount</string>
     <string name="menu_delete">delete card</string>
+    <string name="message">message</string>
 </resources>

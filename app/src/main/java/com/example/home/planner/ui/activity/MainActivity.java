@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         if (id == R.id.action_deleteAll) {
             viewModel.deleteAllCards();
+            viewModel.deleteAllNotes();
             return true;
         }
         return super.onOptionsItemSelected(item);
