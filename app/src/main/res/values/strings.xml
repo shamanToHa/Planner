@@ -12,11 +12,12 @@
     <string name="tab_item_note">notes</string>
     <string name="earning">earning</string>
     <string name="expenses">expenses</string>
-    <string name="action_clear">Clear All</string>
+    <string name="action_clear_earnings">Clear all earnings</string>
     <string name="note">note</string>
     <string name="create">create</string>
     <string name="title">title</string>
     <string name="amount">amount</string>
     <string name="menu_delete">delete card</string>
     <string name="message">message</string>
+    <string name="action_clear_notes">Clear all notes</string>
 </resources>

@@ -2,8 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_deleteAll"
-        android:orderInCategory="100"
-        android:title="@string/action_clear"
+        android:id="@+id/action_delete_earnings"
+        android:orderInCategory="1"
+        android:title="@string/action_clear_earnings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_delete_notes"
+        android:orderInCategory="1"
+        android:title="@string/action_clear_notes"
         app:showAsAction="never" />
 </menu>

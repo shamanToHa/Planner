@@ -79,8 +79,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_deleteAll) {
+        if (id == R.id.action_delete_earnings) {
             viewModel.deleteAllCards();
+            return true;
+        } else if (id == R.id.action_delete_notes) {
             viewModel.deleteAllNotes();
             return true;
         }
