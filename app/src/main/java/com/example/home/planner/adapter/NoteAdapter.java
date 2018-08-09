@@ -57,7 +57,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
         TextView title;
         TextView message;
 
-        public ViewHolder(View itemView) {
+         ViewHolder(View itemView) {
             super(itemView);
             cardView = itemView.findViewById(R.id.item_note_card);
             title = itemView.findViewById(R.id.item_note_title);
@@ -66,8 +66,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.ViewHolder> {
                 PopupMenu menu = new PopupMenu(context, v);
                 menu.inflate(R.menu.menu_card);
                 menu.setOnMenuItemClickListener(item -> {
-                    long tmp = data.get(getAdapterPosition()).getId();
-                    model.deleteNote(tmp);
+                    model.deleteNote(data.get(getAdapterPosition()).getId());
                     return false;
                 });
                 menu.show();

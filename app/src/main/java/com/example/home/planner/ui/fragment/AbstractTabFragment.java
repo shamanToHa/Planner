@@ -1,6 +1,5 @@
 package com.example.home.planner.ui.fragment;
 
-import android.arch.lifecycle.Lifecycle;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 

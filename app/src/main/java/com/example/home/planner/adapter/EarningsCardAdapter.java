@@ -66,8 +66,7 @@ public class EarningsCardAdapter extends RecyclerView.Adapter<EarningsCardAdapte
                 PopupMenu menu = new PopupMenu(context, v);
                 menu.inflate(R.menu.menu_card);
                 menu.setOnMenuItemClickListener(item -> {
-                    long tmp = data.get(getAdapterPosition()).getId();
-                    model.deleteCard(tmp);
+                    model.deleteCard(data.get(getAdapterPosition()).getId());
                     return false;
                 });
                 menu.show();

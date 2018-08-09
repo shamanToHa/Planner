@@ -8,7 +8,7 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/action_delete_notes"
-        android:orderInCategory="1"
+        android:orderInCategory="2"
         android:title="@string/action_clear_notes"
         app:showAsAction="never" />
 </menu>
